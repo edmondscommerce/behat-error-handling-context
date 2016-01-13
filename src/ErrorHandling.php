@@ -1,6 +1,6 @@
 <?php
 
-namespace EdmondsCommerce\BehatErrorHandling
+namespace EdmondsCommerce\BehatErrorHandling;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
