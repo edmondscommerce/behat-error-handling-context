@@ -23,7 +23,7 @@ class ErrorHandlingContext extends RawMinkContext implements Context, SnippetAcc
         {
             if (isset($_SERVER['BEHAT_DIE_ON_FAILURE']))
             {
-                die("BEHAT_DIE_ON_FAILURE is defined\nKilling Full Process");
+                die("BEHAT_DIE_ON_FAILURE is defined. Killing Full Process\n");
             }
         }
     }
@@ -53,6 +53,10 @@ class ErrorHandlingContext extends RawMinkContext implements Context, SnippetAcc
                 if (!file_exists('/tmp/behat'))
                 {
                     mkdir('/tmp/behat/');
+                }
+                if(strlen($name) > 250) {
+                    $name = substr($name, 0, 200);
+                    $name .= date('YmdHis');
                 }
                 $file = '/tmp/behat/' . $name . '.png';
                 file_put_contents($file, $this->getSession()->getDriver()->getScreenshot());
