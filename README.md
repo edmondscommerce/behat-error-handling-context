@@ -1,4 +1,4 @@
-#Behat Error Handling Context
+# Behat Error Handling Context
 ## By [Edmonds Commerce](https://www.edmondscommerce.co.uk)
 
 Used to handle simple errors and to take screenshots when they occur
