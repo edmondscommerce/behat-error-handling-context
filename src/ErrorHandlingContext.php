@@ -61,7 +61,10 @@ class ErrorHandlingContext extends RawMinkContext implements Context, SnippetAcc
                 $file = '/tmp/behat/' . $name . '.png';
                 file_put_contents($file, $this->getSession()->getDriver()->getScreenshot());
                 echo "Error Screen Shot Saved to $file";
-                xdebug_break();
+                if(function_exists('xdebug_break'))
+                {
+                    xdebug_break();
+                }
             }
         }
     }
